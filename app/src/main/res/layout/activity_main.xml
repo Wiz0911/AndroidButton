@@ -48,9 +48,10 @@
                 android:inputType="numberDecimal"
                 android:text="账号"
                 android:textColor="#000000"
-                android:textSize="32dp" />
+                android:textSize="24dp" />
 
             <EditText
+                android:id="@+id/id_edit_account"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/text_account"
@@ -59,9 +60,10 @@
                 android:background="@drawable/underline"
                 android:gravity="left"
                 android:hint="请输入账号"
-                android:textSize="32dp"
                 android:paddingLeft="5dp"
-                />
+                android:maxLength="16"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:textSize="24dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -84,19 +86,22 @@
                 android:gravity="center"
                 android:text="密码"
                 android:textColor="#000000"
-                android:textSize="32dp" />
+                android:textSize="24dp" />
 
             <EditText
+                android:id="@+id/id_edit_pass_word"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/text_account"
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/underline"
                 android:gravity="left"
-                android:hint="请输入账号"
+                android:hint="请输入密码（8-16字符）"
+                android:maxLength="16"
+                android:paddingLeft="5dp"
+                android:inputType="textPassword"
                 android:textColor="#000000"
-                android:textSize="32dp"
-                android:paddingLeft="5dp" />
+                android:textSize="24dp" />
         </LinearLayout>
 
         <LinearLayout
@@ -111,17 +116,17 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/id_login_btn"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:background="@drawable/btn_shape"
-                android:onClick="login"
+                android:onClick="clickEvent"
                 android:text="登陆"
                 android:textColor="#FFFFFF"
                 android:textSize="40dp" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/layout_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/layout_login"
@@ -131,20 +136,26 @@
             android:layout_marginBottom="5dp">
 
             <TextView
+                android:id="@+id/id_register"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:background="@drawable/underline"
                 android:gravity="center"
+                android:clickable="true"
+                android:onClick="clickEvent"
                 android:text="注册"
                 android:textSize="32dp" />
 
             <TextView
+                android:id="@+id/id_forget_pass_word"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.5"
                 android:background="@drawable/underline"
                 android:gravity="center"
+                android:clickable="true"
+                android:onClick="clickEvent"
                 android:text="忘记密码"
                 android:textSize="32dp" />
         </LinearLayout>
@@ -159,7 +170,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
 
-            android:text="版权所有：Loquat(枇杷)"
-            android:textSize="24dp"/>
+            android:text=" Copyright @2022 Loquat. All rights reserved."
+            android:textSize="12dp"
+            android:layout_marginBottom="10dp"/>
     </RelativeLayout>
 </RelativeLayout>
